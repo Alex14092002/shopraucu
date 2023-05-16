@@ -1,0 +1,42 @@
+.main-cart{
+    margin-top: 30px;
+}
+.icon-cancle{
+    margin-right: 10px;
+}
+.img-product-cart{
+    margin-right: 10px;
+}
+.icon-cancle i{
+    color: grey;
+}
+.name-item-cart h5{
+    font-size: 14px;
+}
+.item-img-product{
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+.cart-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.price-cart h5{
+    color: #298600;
+}
+.tongtien{
+    display: flex;
+    justify-content: center;
+}
+.tongtien h3 strong{
+    color: #298600;
+}
+.giohangrong h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    margin-top: 20px;
+}

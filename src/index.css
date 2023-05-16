@@ -1,0 +1,7 @@
+.Toastify__toast-container {
+  z-index: 9999;
+}
+
+.Toastify__toast--success {
+  background-color: green;
+}

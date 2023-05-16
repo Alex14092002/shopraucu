@@ -1,0 +1,213 @@
+.main-category{
+    margin-top: 30px;
+}
+.category ul{
+    list-style: none;
+    padding-left: 0;
+}
+.category ul li{
+    line-height: 42px;
+    
+}
+.category{
+    padding: 30px;
+    box-shadow:  0 0 1px 1px #c4c3c3;
+}
+.category i{
+    color: #298660;
+}
+.category h5{
+    font-size: 18px;
+    color: #298660;
+}
+a{
+    text-decoration: none;
+}
+.item-img-second{
+    margin-bottom: 20px;
+    cursor: pointer;
+    width: 240px;
+    height: 240px;
+    overflow: hidden;
+}
+.item-img-second img{
+    transition: transform 0.3s ease;
+}
+.item-img-second img:hover{
+    transform: scale(1.1);
+}
+.img-product{
+    width: 240px;
+    height: 240px;
+    overflow: hidden;
+}
+.img-product img{
+    transition: transform 0.3s ease;
+}
+.img-product img:hover{
+    transform: scale(1.1);
+}
+.slider-banner , .img-second{
+    
+    cursor: pointer;
+}
+.carousel-item img{
+    height: 500px;
+}
+.item-img-second img{
+    height: 240px;
+}
+
+.category ul li img{
+    margin-right: 10px;
+}
+.carousel-control-next-icon{
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/OOjs_UI_icon_next-ltr.svg/1200px-OOjs_UI_icon_next-ltr.svg.png) !important;
+}
+.carousel-control-prev-icon{
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/OOjs_UI_icon_previous-ltr.svg/1200px-OOjs_UI_icon_previous-ltr.svg.png) !important;
+}
+.category ul li a{
+    color: #212529;
+    text-decoration: none;
+}
+.category-noibat{
+    margin-top: 20px;
+    
+
+}
+.main-category{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.category-noibat h1 , .product-andam h1{
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.slick-arrow{
+    display: none !important;
+    left: 0 !important; 
+    right: 0 !important;
+}
+
+.name-danhmuc {
+    margin-top: 10px
+}
+.slider-item a{
+    text-decoration: none;
+}
+ .name-danhmuc h5{
+    text-align: center;
+    font-size: 12px;
+   color: #212529;
+   font-weight: bold;
+
+}
+.img-danhmuc-slider{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.price-cart{
+    display: flex;
+    justify-content: space-between;
+}
+.cart-icon span{
+    cursor: pointer;
+    background-color: #006400;
+    color: #ffffff;
+    width: 25px;
+    font-size: 27   px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cart-icon span:hover{
+    background-color: #ffffff;
+    color: #006400;
+    border: solid #006400 1px;
+}
+.item-product-main{
+    box-shadow:  0 0 3px 3px #e4e3e3;
+    padding: 20px 10px;
+}
+.item-product{
+    margin-bottom: 15px;
+}
+.img-product{
+    
+    margin-bottom: 15px;
+}
+.main-product{
+    margin-left: 0;
+    margin-bottom: 50px;
+    margin-right: 0;
+    margin-top: 30px;
+}
+.name-product h5{
+    font-size: 14px;
+    color: #000;
+
+}
+.name-product h5:hover{
+    color: #006400;
+}
+.name-product{
+    margin-bottom: 15px;
+}
+.price h3{
+    font-size: 16px;
+    color: #006400;
+    font-weight: bold;
+}
+.banner{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.thuonghieunoibat h1{
+    font-size: 22px;
+    font-weight: 600;
+}
+.input-dangki button{
+    font-size: 15px;
+    background-color: #fbd947;
+    height: 30px;
+    border-top-right-radius: 30px;
+   border-bottom-right-radius: 30px;
+    width: 30%;
+}
+.input-dangki input{
+    width: 70%;
+   border-top-left-radius: 30px;
+   border-bottom-left-radius: 30px;
+    height: 30px;
+}
+
+@media(max-width : 750px){
+    .category{
+        display: none;
+    }
+    .carousel-item img{
+        height: 500px;
+    }
+   .carousel-item img{
+        height: 200px;
+    }
+    .item-img-second img{
+        height: 90px;
+    }
+    .img-second{
+        padding-left: 0;
+    }
+    .item-img-second{
+        height: auto;
+        width: auto;
+    }
+    .img-product{
+        width: auto;
+        height: auto;
+    }
+}
