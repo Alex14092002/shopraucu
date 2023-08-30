@@ -218,6 +218,15 @@ nav{
     cursor: pointer;
     color: #298600;
   }
+  .user  a {
+    font-size: 14px;
+    color: #298600;
+  }
+  .btn-user{
+    background-color: #298600;
+    color: #fff;
+    padding: 5px 20px;
+  }
   @media (max-width:920px) {
     #humuber{
         display: inline;

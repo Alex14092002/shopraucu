@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import "./Header.css";
+import { useState } from "react";
 const toggleBar = () =>{ 
   const barMobile = document.querySelector('.mobile-bar')
   barMobile.classList.toggle('special-bar')
@@ -11,7 +12,13 @@ const toggleBar = () =>{
 
 
 
+
 const Header = () => {
+  const [user , setUser ] = useState(localStorage.getItem('loggedInUser'))
+  const logOut = () =>{
+    localStorage.removeItem('loggedInUser')
+    window.location.href = '/'
+  }
   return (
     <>
       <div className="mobile-bar ">
@@ -149,6 +156,21 @@ const Header = () => {
                 </li>
               </ul>
             </div>
+            {
+              user ? (
+                <div class="pb-4">
+                <button onClick={logOut} className="btn-user">{user}/Đăng xuất</button>
+              </div>  
+              ) : (
+                <div class="user">
+                <Link to="/user">
+                  Đăng Nhập/Đăng Ký
+                </Link>
+              </div>  
+              )
+            }
+          
+         
             <div class="booking">
               <Link to="/cart">
                 <i class="fa fa-shopping-bag" aria-hidden="true"></i>

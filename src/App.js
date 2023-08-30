@@ -21,6 +21,8 @@ import Detailthucphamdinhduong from './Component/Detailthucphamdinhduong'
 import Cart from './Component/Cart'
 import Hethongcuahang from './Component/Hethongcuahang';
 import Chinhsach from './Component/Chinhsach';
+import User from './Component/User';
+import Signin from './Component/Signin';
 
 function App() {
 
@@ -95,6 +97,8 @@ function App() {
       <Route path='/cart' element={<Cart />}/>
       <Route path='/hethongcuahang' element={<Hethongcuahang/>}/>
       <Route path='/chinhsach' element={<Chinhsach/>}/>
+      <Route path='/user' element={<User/>}/>
+      <Route path='/dangki' element={<Signin/>}/>
     </Routes>
    
 
