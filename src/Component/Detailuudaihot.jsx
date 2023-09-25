@@ -1,7 +1,11 @@
 import React from 'react'
 import { Carousel } from 'react-carousel-minimal';
 import { useState , useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+// useState : ; lưu trữ và set lại giá trí
+// useEffect : render lại dữ liệu khi có dữ. liệu mới được cập nhật 
+// 
+import { useParams } from 'react-router-dom'; // hook
+// useParams : lấy thông trên url 
 import { Link } from "react-router-dom";
 import "./Detailuudaihot.css"
 const Detailuudaihot = (props) => {
@@ -46,8 +50,8 @@ const Detailuudaihot = (props) => {
         currency: 'VND',
         minimumFractionDigits: 0
       });
+// string , number
 
-      
   return (
     <>
 

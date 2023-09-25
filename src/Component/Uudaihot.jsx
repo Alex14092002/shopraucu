@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Category.css";
 import { useState, useEffect } from "react";
 const Uudaihot = (props) => {
-      const [data, setData] = useState([]);
+      const [data, setData] = useState([]); // mảng sản phẩm
 
   useEffect(() => {
     fetch("https://data-banraucu-default-rtdb.firebaseio.com/uudaihot.json")

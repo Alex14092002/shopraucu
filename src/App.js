@@ -32,9 +32,7 @@ function App() {
 
  
  const  handleAddToCart = (table , id , name , promotionalPrice , img1 ) => {
-    
   let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-
   let existingItem = cartItems.find(item => item.id === `${table}-${id}`);
   if (existingItem) {
     console.log('sản phẩm đã có trong giỏ hàng');
@@ -67,7 +65,8 @@ function App() {
   }
   localStorage.setItem('cartItems', JSON.stringify(cartItems));
     
-  }
+  
+}
 
   return (
   <>
@@ -78,7 +77,7 @@ function App() {
   <Header/>
   <ToastContainer />
 
-
+      {/* router */}
     <Routes>
 
       <Route path='/' element={<Category handleAddToCart={handleAddToCart} />} />

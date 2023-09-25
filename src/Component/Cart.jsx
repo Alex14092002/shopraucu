@@ -1,10 +1,28 @@
 import React, { useState, useEffect } from "react";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "./Cart.css";
 
 const Cart = () => {
-  const [cart, setCart] = useState( []);
 
+  const [user , setUser] = useState(localStorage.getItem("loggedInUser"))
+
+  const [cart, setCart] = useState( []);
+  const handleTrade = () =>{
+    if(user){
+
+    } else{
+      toast.error('Chưa Đăng nhập', {
+        position: 'top-right',
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
+  }
   const [totalPrice, setTotalPrice] = useState(0);
   useEffect(() => {
     const storedCart = localStorage.getItem("cartItems");
@@ -77,6 +95,22 @@ const Cart = () => {
               <h3>
                 Tổng Giá Tiền : <strong>{formatter.format(totalPrice)}</strong>{" "}
               </h3>
+            </div>
+            <div className="container">
+              <div className="row">
+              <div className="item-input col-12 col-md-6">
+              <label>Số điện thoại</label>
+              <input type="text" placeholder="Nhập số điện thoại"/>
+              </div>
+              <div className="item-input col-12 col-md-6">
+              <label>Số điện thoại</label>
+              <input type="text" placeholder="Nhập số điện thoại"/>
+              </div>  
+            
+              </div>
+            </div>
+            <div className="btn-thanhtoan">
+              <button onClick={()=>handleTrade()}>Thanh toán</button>
             </div>
           </div>
         </div>

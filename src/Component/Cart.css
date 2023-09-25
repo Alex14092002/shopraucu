@@ -40,3 +40,19 @@
     font-size: 30px;
     margin-top: 20px;
 }
+.btn-thanhtoan {
+    display: flex;
+    justify-content: center;
+}
+.btn-thanhtoan button{
+    background-color: #298600;  
+    color:#fff;
+    padding: 10px 20px;
+}
+.item-input label{
+    margin-right: 10px;
+}
+.item-input input{
+    border: #298600 solid 1px;
+    width: 70%;
+}
