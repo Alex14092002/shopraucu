@@ -51,8 +51,13 @@
 }
 .item-input label{
     margin-right: 10px;
+    width: 20%;
 }
 .item-input input{
     border: #298600 solid 1px;
     width: 70%;
+    padding-left: 10px;
+}
+.item-input{
+    margin-bottom: 20px;
 }

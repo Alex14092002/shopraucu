@@ -1,19 +1,78 @@
 import React, { useState, useEffect } from "react";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./Cart.css";
 
 const Cart = () => {
+  const [user, setUser] = useState(localStorage.getItem("loggedInUser"));
 
-  const [user , setUser] = useState(localStorage.getItem("loggedInUser"))
+  const [cart, setCart] = useState([]);
+  const [hoTen, setHoTen] = useState("");
+  const [soDienThoai, setSoDienThoai] = useState("");
+  const [diaChi, setDiaChi] = useState("");
+  const [ghiChu, setGhiChu] = useState("");
 
-  const [cart, setCart] = useState( []);
-  const handleTrade = () =>{
-    if(user){
+  const handleTrade = () => {
+    if (user) {
+      // Kiểm tra xem có dữ liệu nào bị bỏ trống không
+      if (!hoTen || !soDienThoai || !diaChi) {
+        toast.error("Vui lòng điền đầy đủ thông tin", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      } else {
+        // Tạo đối tượng dữ liệu khách hàng
+        const customerData = {
+          hoTen,
+          soDienThoai,
+          diaChi,
+          ghiChu,
+          cart: cart,
+        };
+        // Gửi dữ liệu lên Firebase Realtime Database
+        fetch(
+          "https://data-banraucu-default-rtdb.firebaseio.com/custommer.json",
+          {
+            method: "POST",
+            body: JSON.stringify(customerData),
+          }
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            // Xóa giỏ hàng sau khi đã thanh toán thành công
+            setCart([]);
+            localStorage.removeItem("cartItems");
 
-    } else{
-      toast.error('Chưa Đăng nhập', {
-        position: 'top-right',
+            toast.success("Thanh toán thành công", {
+              position: "top-right",
+              autoClose: 2000,
+              hideProgressBar: true,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+            });
+          })
+          .catch((error) => {
+            toast.error("Đã xảy ra lỗi trong quá trình thanh toán", {
+              position: "top-right",
+              autoClose: 2000,
+              hideProgressBar: true,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+            });
+          });
+      }
+    } else {
+      toast.error("Chưa Đăng nhập", {
+        position: "top-right",
         autoClose: 2000,
         hideProgressBar: true,
         closeOnClick: true,
@@ -22,7 +81,7 @@ const Cart = () => {
         progress: undefined,
       });
     }
-  }
+  };
   const [totalPrice, setTotalPrice] = useState(0);
   useEffect(() => {
     const storedCart = localStorage.getItem("cartItems");
@@ -33,7 +92,6 @@ const Cart = () => {
     }
   }, []);
 
- 
   useEffect(() => {
     let total = 0;
     cart.forEach((item) => {
@@ -98,19 +156,46 @@ const Cart = () => {
             </div>
             <div className="container">
               <div className="row">
-              <div className="item-input col-12 col-md-6">
-              <label>Số điện thoại</label>
-              <input type="text" placeholder="Nhập số điện thoại"/>
-              </div>
-              <div className="item-input col-12 col-md-6">
-              <label>Số điện thoại</label>
-              <input type="text" placeholder="Nhập số điện thoại"/>
-              </div>  
-            
+                <div className="item-input col-12 col-md-6">
+                  <label>Họ và tên</label>
+                  <input
+                    type="text"
+                    placeholder="Nhập họ và tên"
+                    value={hoTen}
+                    onChange={(e) => setHoTen(e.target.value)}
+                  />
+                </div>
+                <div className="item-input col-12 col-md-6">
+                  <label>Số điện thoại</label>
+                  <input
+                    type="text"
+                    placeholder="Nhập số điện thoại"
+                    value={soDienThoai}
+                    onChange={(e) => setSoDienThoai(e.target.value)}
+                  />
+                </div>
+                <div className="item-input col-12 col-md-6">
+                  <label>Địa chỉ</label>
+                  <input
+                    type="text"
+                    placeholder="Nhập địa chỉ"
+                    value={diaChi}
+                    onChange={(e) => setDiaChi(e.target.value)}
+                  />
+                </div>
+                <div className="item-input col-12 col-md-6">
+                  <label>Ghi chú</label>
+                  <input
+                    type="text"
+                    placeholder="Ghi chú"
+                    value={ghiChu}
+                    onChange={(e) => setGhiChu(e.target.value)}
+                  />
+                </div>
               </div>
             </div>
             <div className="btn-thanhtoan">
-              <button onClick={()=>handleTrade()}>Thanh toán</button>
+              <button onClick={() => handleTrade()}>Thanh toán</button>
             </div>
           </div>
         </div>
