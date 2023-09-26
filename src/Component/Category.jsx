@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import 'react-toastify/dist/ReactToastify.css';
-
+import banner from '../img/anh banner hica.jpg'
 const Category = (props) => {
 
 
@@ -357,7 +357,7 @@ const Category = (props) => {
         <div className="banner">
           <Link>
             <img
-              src="https://bizweb.dktcdn.net/100/459/311/themes/870495/assets/section_hot_banner.png?1667276283801"
+              src={banner}
               alt=""
               width="100%"
             />

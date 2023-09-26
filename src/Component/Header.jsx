@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import logo from '../img/logo.jpg'
 import "./Header.css";
 import { useState } from "react";
 const toggleBar = () =>{ 
@@ -28,7 +28,7 @@ const Header = () => {
         <ul>
           <li>
             <Link to='/'>
-            <img src="https://bizweb.dktcdn.net/100/459/311/themes/870495/assets/logo.png?1667276283801" alt=""  width='70%'/>
+            <img src={logo} alt=""  width='70%'/>
             </Link>
           </li>
           <li>
@@ -112,7 +112,7 @@ const Header = () => {
             <div class="logo">
               <Link to="/">
                 <img
-                  src="https://bizweb.dktcdn.net/100/459/311/themes/870495/assets/logo.png?1667276283801"
+                  src={logo}
                   alt=""
                   width="100px"
                 />

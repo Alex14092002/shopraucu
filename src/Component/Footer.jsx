@@ -1,5 +1,6 @@
 import React from "react";
 import "./Footer.css"
+import logo from '../img/logo.jpg'
 const Footer = () => {
   return (
     <>
@@ -9,15 +10,15 @@ const Footer = () => {
           <div className="item-footer col-6 col-md-3">
             <h5>Thông tin</h5>
                 <div className="img-logo-footer">
-                  <img src="https://bizweb.dktcdn.net/100/459/311/themes/870495/assets/logo-footer.png?1667276283801" alt="" width="100%" />
+                  <img src={logo} alt="" width="50%" />
                 </div>
                 <ul>
                     <li><i class="fa fa-map-marker" aria-hidden="true"></i> Cơ sở 1: 51 Nguyên Hồng, Láng Hạ, Đống Đa, Hà Nội</li>
                     <li><i class="fa fa-mobile" aria-hidden="true"></i> Hotline : 0793.233.338</li>
-                    <li><i class="fa fa-envelope" aria-hidden="true"></i> Email : xanhsam.vn@gmail.com</li>
+                    <li><i class="fa fa-envelope" aria-hidden="true"></i> Email : hica.vn@gmail.com</li>
                     <li><i class="fa fa-map-marker" aria-hidden="true"></i> Cơ sở 2: A2 SO08, Vinhomes Gardenia, Hàm Nghi, Cầu Diễn, Nam Từ Liêm, Hà Nội</li>
                     <li><i class="fa fa-mobile" aria-hidden="true"></i>Hotline: 0798.233.338</li>
-                    <li><i class="fa fa-envelope" aria-hidden="true"></i> Email : xanhsamhamnghi@gmail.com</li>
+                    <li><i class="fa fa-envelope" aria-hidden="true"></i> Email : hica@gmail.com</li>
                 </ul>
 
                 <div className="icon">
