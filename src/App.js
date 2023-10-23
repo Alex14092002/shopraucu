@@ -26,12 +26,7 @@ import Signin from './Component/Signin';
 
 function App() {
 
-
- 
- 
-
- 
- const  handleAddToCart = (table , id , name , promotionalPrice , img1 ) => {
+ const handleAddToCart = (table , id , name , promotionalPrice , img1 ) => {
   let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
   let existingItem = cartItems.find(item => item.id === `${table}-${id}`);
   if (existingItem) {
@@ -64,8 +59,6 @@ function App() {
     });
   }
   localStorage.setItem('cartItems', JSON.stringify(cartItems));
-    
-  
 }
 
   return (

@@ -13,17 +13,14 @@ const Signin = () => {
       setErrorMessage("Vui lòng điền đầy đủ thông tin.");
       return;
     }
-
     if (password !== confirmPassword) {
       setErrorMessage("Mật khẩu và xác nhận mật khẩu không khớp.");
       return;
     }
-
     const userData = {
       username: username,
       password: password,
     };
-
     fetch("https://data-banraucu-default-rtdb.firebaseio.com/user.json", {
       method: "POST",
       body: JSON.stringify(userData),
@@ -33,7 +30,6 @@ const Signin = () => {
           throw new Error("Đăng ký thất bại");
         }
         alert("Đăng ký thành công!");
-        
         window.location.href = '/user'
       })
       .catch((error) => {
