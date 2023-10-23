@@ -32,7 +32,7 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link to='/'>Trang HOME</Link>
+            <Link to='/'>Trang Chủ</Link>
           </li>
           <li>
             {" "}
